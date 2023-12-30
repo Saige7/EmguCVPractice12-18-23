@@ -33,7 +33,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.playerScore = new System.Windows.Forms.Label();
             this.computerScore = new System.Windows.Forms.Label();
+            this.camera = new Emgu.CV.UI.ImageBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.camera)).BeginInit();
             this.SuspendLayout();
             // 
             // gameTimer
@@ -45,9 +47,9 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(51, 61);
+            this.pictureBox1.Location = new System.Drawing.Point(333, 53);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(802, 395);
+            this.pictureBox1.Size = new System.Drawing.Size(612, 396);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
@@ -55,32 +57,42 @@
             // playerScore
             // 
             this.playerScore.AutoSize = true;
-            this.playerScore.Location = new System.Drawing.Point(676, 33);
+            this.playerScore.Location = new System.Drawing.Point(846, 25);
             this.playerScore.Name = "playerScore";
-            this.playerScore.Size = new System.Drawing.Size(32, 25);
+            this.playerScore.Size = new System.Drawing.Size(19, 15);
             this.playerScore.TabIndex = 1;
             this.playerScore.Text = "00";
             // 
             // computerScore
             // 
             this.computerScore.AutoSize = true;
-            this.computerScore.Location = new System.Drawing.Point(139, 33);
+            this.computerScore.Location = new System.Drawing.Point(373, 25);
             this.computerScore.Name = "computerScore";
-            this.computerScore.Size = new System.Drawing.Size(32, 25);
+            this.computerScore.Size = new System.Drawing.Size(19, 15);
             this.computerScore.TabIndex = 1;
             this.computerScore.Text = "00";
             // 
+            // camera
+            // 
+            this.camera.Location = new System.Drawing.Point(31, 53);
+            this.camera.Name = "camera";
+            this.camera.Size = new System.Drawing.Size(204, 198);
+            this.camera.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.camera.TabIndex = 2;
+            this.camera.TabStop = false;
+            // 
             // Form1
             // 
-            this.ClientSize = new System.Drawing.Size(894, 479);
+            this.ClientSize = new System.Drawing.Size(975, 528);
+            this.Controls.Add(this.camera);
             this.Controls.Add(this.computerScore);
             this.Controls.Add(this.playerScore);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.camera)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -91,6 +103,7 @@
         private System.Windows.Forms.Label playerScore;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label computerScore;
+        private Emgu.CV.UI.ImageBox camera;
     }
 }
 
