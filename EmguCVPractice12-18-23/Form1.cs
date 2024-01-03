@@ -409,7 +409,13 @@ namespace EmguCVPractice12_18_23
             imageOpened.ShowDialog();
             imageBox17.Image = CvInvoke.Imread(imageOpened.FileName);
         }
-       
+        private void imageBox19_Click(object sender, EventArgs e)
+        {
+            imageBox20.Image = null;
+            OpenFileDialog imageOpened = new OpenFileDialog();
+            imageOpened.ShowDialog();
+            imageBox19.Image = CvInvoke.Imread(imageOpened.FileName);
+        }
         
         private void greenScreenButton_Click(object sender, EventArgs e)
         {
@@ -497,7 +503,6 @@ namespace EmguCVPractice12_18_23
 
             imageBox16.Image = imageToBlur;
         }
-
         private void blur(int kernelSize)
         {
             Bitmap imageToBlur = Image.FromFile("Images/blur1.png") as Bitmap;
@@ -532,6 +537,7 @@ namespace EmguCVPractice12_18_23
 
             pictureBox1.Image = imageToBlur;
         }
+
 
         private void findContours_Click(object sender, EventArgs e)
         {
@@ -587,7 +593,6 @@ namespace EmguCVPractice12_18_23
                     shape = checkShape(contours[i], area, perimeter, rect.Width, rect.Height);
                     //bound rect is bigger than contour area
                     //so detect if it's close 
-                    //1% threshold
                 }
                 
                 var row = datatable.NewRow();
@@ -618,6 +623,30 @@ namespace EmguCVPractice12_18_23
             {
                 return "polygon";
             }          
+        }
+
+
+        private void DilateButton_Click(object sender, EventArgs e)
+        {
+            Mat image = imageBox19.Image as Mat;
+            Mat output = new Mat();
+            int kernelSize = int.Parse(otherKernelSize.Text);
+
+            Mat element = CvInvoke.GetStructuringElement(ElementShape.Rectangle, new Size(kernelSize, kernelSize), new Point(-1, -1));
+            CvInvoke.Dilate(image, output, element, new Point(-1, -1), 1, BorderType.Constant, new MCvScalar(0, 0, 0));
+
+            imageBox20.Image = output;
+        }
+        private void ErosionButton_Click(object sender, EventArgs e)
+        {
+            Mat image = imageBox19.Image as Mat;
+            Mat output = new Mat();
+            int kernelSize = int.Parse(otherKernelSize.Text);
+
+            Mat element = CvInvoke.GetStructuringElement(ElementShape.Rectangle, new Size(kernelSize, kernelSize), new Point(-1, -1));
+            CvInvoke.Erode(image, output, element, new Point(-1, -1), 1, BorderType.Constant, new MCvScalar(0, 0, 0));
+
+            imageBox20.Image = output;
         }
 
     }

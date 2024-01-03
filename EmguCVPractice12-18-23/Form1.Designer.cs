@@ -83,6 +83,11 @@ namespace EmguCVPractice12_18_23
             this.colorOfContour = new System.Windows.Forms.ComboBox();
             this.AreaAndPerimeter = new System.Windows.Forms.Button();
             this.contourInfo = new System.Windows.Forms.DataGridView();
+            this.imageBox19 = new Emgu.CV.UI.ImageBox();
+            this.imageBox20 = new Emgu.CV.UI.ImageBox();
+            this.DilateButton = new System.Windows.Forms.Button();
+            this.ErosionButton = new System.Windows.Forms.Button();
+            this.otherKernelSize = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox3)).BeginInit();
@@ -107,6 +112,8 @@ namespace EmguCVPractice12_18_23
             ((System.ComponentModel.ISupportInitialize)(this.imageBox17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox18)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contourInfo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageBox19)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageBox20)).BeginInit();
             this.SuspendLayout();
             // 
             // orButton
@@ -343,7 +350,7 @@ namespace EmguCVPractice12_18_23
             // 
             // redBox
             // 
-            this.redBox.Location = new System.Drawing.Point(527, 561);
+            this.redBox.Location = new System.Drawing.Point(492, 561);
             this.redBox.Name = "redBox";
             this.redBox.Size = new System.Drawing.Size(100, 100);
             this.redBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -352,7 +359,7 @@ namespace EmguCVPractice12_18_23
             // 
             // greenBox
             // 
-            this.greenBox.Location = new System.Drawing.Point(401, 561);
+            this.greenBox.Location = new System.Drawing.Point(386, 561);
             this.greenBox.Name = "greenBox";
             this.greenBox.Size = new System.Drawing.Size(100, 100);
             this.greenBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -454,7 +461,7 @@ namespace EmguCVPractice12_18_23
             // imageBox12
             // 
             this.imageBox12.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.imageBox12.Location = new System.Drawing.Point(360, 438);
+            this.imageBox12.Location = new System.Drawing.Point(325, 438);
             this.imageBox12.Name = "imageBox12";
             this.imageBox12.Size = new System.Drawing.Size(100, 100);
             this.imageBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -464,7 +471,7 @@ namespace EmguCVPractice12_18_23
             // 
             // greenScreenButton
             // 
-            this.greenScreenButton.Location = new System.Drawing.Point(597, 438);
+            this.greenScreenButton.Location = new System.Drawing.Point(562, 438);
             this.greenScreenButton.Name = "greenScreenButton";
             this.greenScreenButton.Size = new System.Drawing.Size(75, 40);
             this.greenScreenButton.TabIndex = 39;
@@ -475,7 +482,7 @@ namespace EmguCVPractice12_18_23
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(620, 483);
+            this.label6.Location = new System.Drawing.Point(585, 483);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(30, 15);
             this.label6.TabIndex = 40;
@@ -484,7 +491,7 @@ namespace EmguCVPractice12_18_23
             // imageBox13
             // 
             this.imageBox13.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.imageBox13.Location = new System.Drawing.Point(479, 438);
+            this.imageBox13.Location = new System.Drawing.Point(444, 438);
             this.imageBox13.Name = "imageBox13";
             this.imageBox13.Size = new System.Drawing.Size(100, 100);
             this.imageBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -494,7 +501,7 @@ namespace EmguCVPractice12_18_23
             // 
             // imageBox14
             // 
-            this.imageBox14.Location = new System.Drawing.Point(693, 438);
+            this.imageBox14.Location = new System.Drawing.Point(658, 438);
             this.imageBox14.Name = "imageBox14";
             this.imageBox14.Size = new System.Drawing.Size(100, 100);
             this.imageBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -503,7 +510,7 @@ namespace EmguCVPractice12_18_23
             // 
             // blueScreenButton
             // 
-            this.blueScreenButton.Location = new System.Drawing.Point(597, 501);
+            this.blueScreenButton.Location = new System.Drawing.Point(562, 501);
             this.blueScreenButton.Name = "blueScreenButton";
             this.blueScreenButton.Size = new System.Drawing.Size(75, 37);
             this.blueScreenButton.TabIndex = 41;
@@ -639,12 +646,64 @@ namespace EmguCVPractice12_18_23
             this.contourInfo.Size = new System.Drawing.Size(295, 150);
             this.contourInfo.TabIndex = 52;
             // 
+            // imageBox19
+            // 
+            this.imageBox19.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.imageBox19.Location = new System.Drawing.Point(628, 560);
+            this.imageBox19.Name = "imageBox19";
+            this.imageBox19.Size = new System.Drawing.Size(100, 100);
+            this.imageBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imageBox19.TabIndex = 2;
+            this.imageBox19.TabStop = false;
+            this.imageBox19.Click += new System.EventHandler(this.imageBox19_Click);
+            // 
+            // imageBox20
+            // 
+            this.imageBox20.Location = new System.Drawing.Point(855, 560);
+            this.imageBox20.Name = "imageBox20";
+            this.imageBox20.Size = new System.Drawing.Size(100, 100);
+            this.imageBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imageBox20.TabIndex = 2;
+            this.imageBox20.TabStop = false;
+            // 
+            // DilateButton
+            // 
+            this.DilateButton.Location = new System.Drawing.Point(753, 571);
+            this.DilateButton.Name = "DilateButton";
+            this.DilateButton.Size = new System.Drawing.Size(75, 23);
+            this.DilateButton.TabIndex = 53;
+            this.DilateButton.Text = "dilate";
+            this.DilateButton.UseVisualStyleBackColor = true;
+            this.DilateButton.Click += new System.EventHandler(this.DilateButton_Click);
+            // 
+            // ErosionButton
+            // 
+            this.ErosionButton.Location = new System.Drawing.Point(753, 629);
+            this.ErosionButton.Name = "ErosionButton";
+            this.ErosionButton.Size = new System.Drawing.Size(75, 23);
+            this.ErosionButton.TabIndex = 54;
+            this.ErosionButton.Text = "erode";
+            this.ErosionButton.UseVisualStyleBackColor = true;
+            this.ErosionButton.Click += new System.EventHandler(this.ErosionButton_Click);
+            // 
+            // otherKernelSize
+            // 
+            this.otherKernelSize.Location = new System.Drawing.Point(772, 600);
+            this.otherKernelSize.Name = "otherKernelSize";
+            this.otherKernelSize.Size = new System.Drawing.Size(37, 23);
+            this.otherKernelSize.TabIndex = 55;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(947, 723);
+            this.ClientSize = new System.Drawing.Size(984, 702);
+            this.Controls.Add(this.otherKernelSize);
+            this.Controls.Add(this.ErosionButton);
+            this.Controls.Add(this.DilateButton);
+            this.Controls.Add(this.imageBox20);
+            this.Controls.Add(this.imageBox19);
             this.Controls.Add(this.contourInfo);
             this.Controls.Add(this.AreaAndPerimeter);
             this.Controls.Add(this.colorOfContour);
@@ -725,6 +784,8 @@ namespace EmguCVPractice12_18_23
             ((System.ComponentModel.ISupportInitialize)(this.imageBox17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox18)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.contourInfo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageBox19)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageBox20)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -784,6 +845,11 @@ namespace EmguCVPractice12_18_23
         private System.Windows.Forms.ComboBox colorOfContour;
         private System.Windows.Forms.Button AreaAndPerimeter;
         private System.Windows.Forms.DataGridView contourInfo;
+        private Emgu.CV.UI.ImageBox imageBox19;
+        private Emgu.CV.UI.ImageBox imageBox20;
+        private System.Windows.Forms.Button DilateButton;
+        private System.Windows.Forms.Button ErosionButton;
+        private System.Windows.Forms.TextBox otherKernelSize;
     }
 }
 

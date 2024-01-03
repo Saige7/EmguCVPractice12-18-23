@@ -25,7 +25,6 @@ namespace PingPongCV
         private Rectangle computer;
         private Rectangle ball;
 
-        private int paddleSpeed;
         private int computerSpeed;
         private int xSpeed;
         private int ySpeed;
@@ -45,14 +44,12 @@ namespace PingPongCV
             xSpeed = 7;
             ySpeed = 7;
             computerSpeed = 10;
-            paddleSpeed = 10;
             playerPoints = 0;
             computerPoints = 0;
 
             capture = new VideoCapture(0);
 
-            Application.Idle += GrabFromIdle;
-            
+            Application.Idle += GrabFromIdle;         
         }
         private void GrabFromIdle(object sender, EventArgs e)
         {
@@ -70,7 +67,6 @@ namespace PingPongCV
             camera.Image = smallCurrentFrame;
 
             PaddleBounds1 = paddleDetection();
-
         }
         private Rectangle paddleDetection()
         {
@@ -78,12 +74,14 @@ namespace PingPongCV
 
             using Mat currentFrameHSV = new Mat();
             CvInvoke.CvtColor(smallCurrentFrame, currentFrameHSV, ColorConversion.Bgr2Hsv);
+            imageBox2.Image = currentFrameHSV;
 
             using Mat red = new Mat();
             CvInvoke.InRange(currentFrameHSV, (ScalarArray)new MCvScalar(0, 100, 100), (ScalarArray)new MCvScalar(7, 255, 255), red);
             using Mat red2 = new Mat();
             CvInvoke.InRange(currentFrameHSV, (ScalarArray)new MCvScalar(150, 100, 100), (ScalarArray)new MCvScalar(180, 255, 255), red2);
             CvInvoke.Add(red, red2, red);
+            imageBox1.Image = red;
 
             VectorOfVectorOfPoint contours = new VectorOfVectorOfPoint();
             using Mat hierarchy = new Mat();
