@@ -649,5 +649,7 @@ namespace EmguCVPractice12_18_23
             imageBox20.Image = output;
         }
 
+
+
     }
 }

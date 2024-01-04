@@ -698,7 +698,7 @@ namespace EmguCVPractice12_18_23
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(984, 702);
+            this.ClientSize = new System.Drawing.Size(992, 702);
             this.Controls.Add(this.otherKernelSize);
             this.Controls.Add(this.ErosionButton);
             this.Controls.Add(this.DilateButton);
