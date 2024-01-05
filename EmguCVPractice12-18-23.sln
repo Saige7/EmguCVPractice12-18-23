@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PingPongCV", "PingPongCV\Pi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpotTheDifference", "SpotTheDifference\SpotTheDifference.csproj", "{5F615855-8D7A-4BF1-A955-950E42FD268B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScannerAndTransformations", "ScannerAndTransformations\ScannerAndTransformations.csproj", "{12F7BD93-DF43-4259-9EEB-D90C68ED358D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScannerAndTransformations", "ScannerAndTransformations\ScannerAndTransformations.csproj", "{12F7BD93-DF43-4259-9EEB-D90C68ED358D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Platformer", "Platformer\Platformer.csproj", "{DFEEAC4A-4592-4FA4-B5A6-D9D9D7B1A9F7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{12F7BD93-DF43-4259-9EEB-D90C68ED358D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{12F7BD93-DF43-4259-9EEB-D90C68ED358D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{12F7BD93-DF43-4259-9EEB-D90C68ED358D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFEEAC4A-4592-4FA4-B5A6-D9D9D7B1A9F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFEEAC4A-4592-4FA4-B5A6-D9D9D7B1A9F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFEEAC4A-4592-4FA4-B5A6-D9D9D7B1A9F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFEEAC4A-4592-4FA4-B5A6-D9D9D7B1A9F7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

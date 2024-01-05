@@ -36,6 +36,8 @@ namespace ScannerAndTransformations
             this.AffineTransformation = new System.Windows.Forms.Button();
             this.imageBox1 = new Emgu.CV.UI.ImageBox();
             this.imageBox3 = new Emgu.CV.UI.ImageBox();
+            this.warpPerspectiveButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.camera)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox1)).BeginInit();
@@ -72,7 +74,7 @@ namespace ScannerAndTransformations
             // 
             // AffineTransformation
             // 
-            this.AffineTransformation.Location = new System.Drawing.Point(319, 163);
+            this.AffineTransformation.Location = new System.Drawing.Point(319, 73);
             this.AffineTransformation.Name = "AffineTransformation";
             this.AffineTransformation.Size = new System.Drawing.Size(116, 38);
             this.AffineTransformation.TabIndex = 4;
@@ -98,12 +100,33 @@ namespace ScannerAndTransformations
             this.imageBox3.TabIndex = 5;
             this.imageBox3.TabStop = false;
             // 
+            // warpPerspectiveButton
+            // 
+            this.warpPerspectiveButton.Location = new System.Drawing.Point(319, 240);
+            this.warpPerspectiveButton.Name = "warpPerspectiveButton";
+            this.warpPerspectiveButton.Size = new System.Drawing.Size(116, 38);
+            this.warpPerspectiveButton.TabIndex = 6;
+            this.warpPerspectiveButton.Text = "warp perspective";
+            this.warpPerspectiveButton.UseVisualStyleBackColor = true;
+            this.warpPerspectiveButton.Click += new System.EventHandler(this.warpPerspectiveButton_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(498, 376);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 15);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "label1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(751, 526);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.warpPerspectiveButton);
             this.Controls.Add(this.imageBox3);
             this.Controls.Add(this.imageBox1);
             this.Controls.Add(this.AffineTransformation);
@@ -118,6 +141,7 @@ namespace ScannerAndTransformations
             ((System.ComponentModel.ISupportInitialize)(this.imageBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox3)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -129,6 +153,8 @@ namespace ScannerAndTransformations
         private System.Windows.Forms.Button AffineTransformation;
         private Emgu.CV.UI.ImageBox imageBox1;
         private Emgu.CV.UI.ImageBox imageBox3;
+        private System.Windows.Forms.Button warpPerspectiveButton;
+        private System.Windows.Forms.Label label1;
     }
 }
 
