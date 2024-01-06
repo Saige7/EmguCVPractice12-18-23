@@ -80,6 +80,7 @@ namespace Platformer
             this.Controls.Add(this.imageBox1);
             this.Controls.Add(this.imageBox2);
             this.Controls.Add(this.camera);
+            this.KeyPreview = true;
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
